@@ -1,0 +1,18 @@
+services:
+
+  redisinsight:
+    container_name: redis_insight
+    image: redislabs/redisinsight:latest
+    ports:
+      - '5540:5540'
+    volumes:
+      - data:/data
+
+volumes:
+  data:
+
+networks:
+  default:
+    external: true
+    name: base
+
